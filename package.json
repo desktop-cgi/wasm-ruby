@@ -1,0 +1,21 @@
+{
+  "name": "wasm-ruby",
+  "version": "1.0.0",
+  "description": "wasm-ruby files for ruby versions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ruby-head-wasm-emscripten": "^2.0.0",
+    "ruby-head-wasm-wasi": "^2.0.0",
+    "ruby-wasm-emscripten": "^0.1.0"
+  },
+  "keywords": [
+    "ruby head wasm emscripten",
+    "ruby head wasm wasi",
+    "ruby wasm emscripten"
+  ],
+  "author": "ganesh B <ganeshsurfs@gmail.com>",
+  "license": "MIT"
+}
