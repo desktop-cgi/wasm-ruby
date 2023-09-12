@@ -1,2 +1,70 @@
 # wasm-ruby
 wasm-ruby files for ruby versions
+
+WebAssembly port of CRuby by Emscripten with a thin JavaScript wrapper to run ruby scripts in node.js
+
+
+#### WebAssembly port of CRuby with WASI.
+
+
+##### USAGE: 
+
+```
+import fs from "fs/promises";
+import { DefaultRubyVM } from "@ruby/wasm-wasi/dist/node.cjs.js";
+
+const main = async () => {
+  const binary = await fs.readFile(
+    //  Tips: Replace the binary with debug info if you want symbolicated stack trace.
+    //  (only nightly release for now)
+    //  "./node_modules/ruby-head-wasm-wasi/dist/ruby.debug+stdlib.wasm"
+    "./node_modules/ruby-head-wasm-wasi/dist/ruby.wasm"
+  );
+  const module = await WebAssembly.compile(binary);
+  const { vm } = await DefaultRubyVM(module);
+
+  vm.eval(`
+    luckiness = ["Lucky", "Unlucky"].sample
+    puts "You are #{luckiness}"
+  `);
+};
+
+main();
+```
+[https://www.npmjs.com/package/ruby-head-wasm-wasi](https://www.npmjs.com/package/ruby-head-wasm-wasi)
+
+
+
+#### WebAssembly port of CRuby by Emscripten with a thin JavaScript wrapper.
+
+
+##### USAGE:
+
+```
+import { loadRuby } from "ruby-wasm-emscripten";
+
+const main = async () => {
+  const args = ["--disable-gems", "-e", "puts 'Hello :)'"];
+  console.log(`$ ruby.wasm ${args.join(" ")}`);
+
+  const defaultModule = {
+    locateFile: (path) => "./node_modules/ruby-wasm-emscripten/dist/" + path,
+    setStatus: (msg) => console.log(msg),
+    print: (line) => console.log(line),
+    arguments: args,
+  };
+
+  await loadRuby(defaultModule);
+};
+
+main();
+```
+
+[https://www.npmjs.com/package/ruby-head-wasm-emscripten](https://www.npmjs.com/package/ruby-head-wasm-emscripten)
+[https://www.npmjs.com/package/ruby-wasm-emscripten](https://www.npmjs.com/package/ruby-wasm-emscripten)
+
+
+### BUILD REPO SCRIPTS:
+
+[https://github.com/ruby/ruby.wasm](https://github.com/ruby/ruby.wasm)
+
