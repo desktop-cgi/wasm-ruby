@@ -37,7 +37,7 @@ main();
 
 [https://www.npmjs.com/package/ruby-head-wasm-wasi](https://www.npmjs.com/package/ruby-head-wasm-wasi)
 
-[https://www.npmjs.com/package/ruby-head-wasm-emscripten](https://www.npmjs.com/package/ruby-head-wasm-emscripten)
+[https://www.npmjs.com/package/ruby-head-wasm-emscripten](https://www.npmjs.com/package/ruby-head-wasm-emscripten): Note: The emscripten demos for the port of ruby.wasm currently has issues and throws an error. 
 
 [https://www.npmjs.com/package/ruby-wasm-emscripten](https://www.npmjs.com/package/ruby-wasm-emscripten)
 
