@@ -6,7 +6,7 @@ import path from "path";
 
 const main = async () => {
   const binary = await fs.readFile(
-    path.join("../node_modules/ruby-head-wasm-wasi/dist/ruby.wasm"),
+    path.join("./node_modules/ruby-head-wasm-wasi/dist/ruby.wasm"),
   );
   const module = await WebAssembly.compile(binary);
   const { vm } = await DefaultRubyVM(module);
