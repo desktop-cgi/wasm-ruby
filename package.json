@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "wasm-ruby files for ruby versions. WebAssembly port of CRuby by Emscripten with a thin JavaScript wrapper to run ruby scripts in node.js",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ruby-head-wasm-emscripten": "^2.0.0",
-    "ruby-head-wasm-wasi": "^2.0.0",
-    "ruby-wasm-emscripten": "^0.1.0"
+    "ruby-head-wasm-wasi": "^2.3.0"
   },
   "keywords": [
     "ruby head wasm emscripten",
@@ -17,5 +16,9 @@
     "ruby wasm emscripten"
   ],
   "author": "ganesh B <ganeshsurfs@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ruby-head-wasm-emscripten": "^2.3.0",
+    "ruby-wasm-emscripten": "^0.1.0"
+  }
 }

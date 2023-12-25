@@ -1,11 +1,12 @@
 import fs from "fs/promises";
 import { DefaultRubyVM } from "@ruby/wasm-wasi/dist/node";
+import path from "path";
 
 // $ node --experimental-wasi-unstable-preview1 index.node.js
 
 const main = async () => {
   const binary = await fs.readFile(
-    "./node_modules/@ruby/head-wasm-wasi/dist/ruby.wasm",
+    path.join("../node_modules/ruby-head-wasm-wasi/dist/ruby.wasm"),
   );
   const module = await WebAssembly.compile(binary);
   const { vm } = await DefaultRubyVM(module);
@@ -25,7 +26,7 @@ const main = async () => {
   try {
     a.call("bar");
   } catch (error) {
-    console.log("caught", error);
+    console.log("INTENTIONAL ERROR: caught", error);
   }
   vm.eval("puts 'Hey!'");
   vm.eval("puts 'Hey!'");
@@ -34,7 +35,7 @@ const main = async () => {
   try {
     vm.eval("raise 'panic!'");
   } catch (error) {
-    console.log("caught", error);
+    console.log("INTENTIONAL ERROR: caught", error);
   }
   console.log(a.toString());
   vm.eval(`
