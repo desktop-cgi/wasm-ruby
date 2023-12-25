@@ -1,6 +1,6 @@
 {
   "name": "wasm-ruby",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wasm-ruby files for ruby versions. WebAssembly port of CRuby by Emscripten with a thin JavaScript wrapper to run ruby scripts in node.js",
   "main": "index.js",
   "type": "module",

@@ -31,6 +31,10 @@ const main = async () => {
 
 main();
 ```
+
+[Other demos](https://github.com/desktop-cgi/wasm-ruby/demos/demos.node.head.wasi.wasm.js)
+
+
 [https://www.npmjs.com/package/ruby-head-wasm-wasi](https://www.npmjs.com/package/ruby-head-wasm-wasi)
 
 [https://www.npmjs.com/package/ruby-head-wasm-emscripten](https://www.npmjs.com/package/ruby-head-wasm-emscripten)
