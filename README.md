@@ -32,34 +32,6 @@ const main = async () => {
 main();
 ```
 [https://www.npmjs.com/package/ruby-head-wasm-wasi](https://www.npmjs.com/package/ruby-head-wasm-wasi)
-
-
-
-#### WebAssembly port of CRuby by Emscripten with a thin JavaScript wrapper.
-
-
-##### USAGE:
-
-```
-import { loadRuby } from "ruby-wasm-emscripten";
-
-const main = async () => {
-  const args = ["--disable-gems", "-e", "puts 'Hello :)'"];
-  console.log(`$ ruby.wasm ${args.join(" ")}`);
-
-  const defaultModule = {
-    locateFile: (path) => "./node_modules/ruby-wasm-emscripten/dist/" + path,
-    setStatus: (msg) => console.log(msg),
-    print: (line) => console.log(line),
-    arguments: args,
-  };
-
-  await loadRuby(defaultModule);
-};
-
-main();
-```
-
 [https://www.npmjs.com/package/ruby-head-wasm-emscripten](https://www.npmjs.com/package/ruby-head-wasm-emscripten)
 [https://www.npmjs.com/package/ruby-wasm-emscripten](https://www.npmjs.com/package/ruby-wasm-emscripten)
 
